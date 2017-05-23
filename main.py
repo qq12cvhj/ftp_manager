@@ -2,7 +2,7 @@
 #!/usr/bin/env python3
 global flag
 import socket, sys, os, threading, time, configparser, re
-
+#下面两个是关闭额外开启的一个线程使用的第三方工具代码  _async_raise()和stop_thread()
 import  ctypes,inspect
 def _async_raise(tid, exctype):
     """raises the exception, performs cleanup if needed"""
