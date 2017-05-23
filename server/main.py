@@ -448,7 +448,8 @@ if __name__ == '__main__':
     cp = configparser.ConfigParser()
     cp.sections()
     cp.read('server.conf',encoding='utf-8')
-    listenAddr = socket.gethostname()
+    #listenAddr = socket.gethostname()
+    listenAddr = '127.0.0.1'
     listenPort = int(cp['basic']['listenport'])
     global listenSock
     listenSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
