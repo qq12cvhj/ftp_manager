@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ftp.iml" filepath="$PROJECT_DIR$/.idea/ftp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lexicalAnalysis/.idea/lexicalAnalysis.iml" filepath="$PROJECT_DIR$/../lexicalAnalysis/.idea/lexicalAnalysis.iml" />
     </modules>
   </component>
 </project>

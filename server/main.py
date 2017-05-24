@@ -320,7 +320,7 @@ class Menu():
                     recv_len = 0
                     print("请注意,上次服务器运行期间流量已清零")
                     global listenSock
-                    listenAddr = socket.gethostname()
+                    listenAddr = '127.0.0.1'
                     listenPort = int(cp['basic']['listenport'])
                     listenSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
                     listenSock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -424,8 +424,8 @@ class Menu():
                     self.selectFunc(5)
             elif option == 6:
 
-                print('\n当前上传流量为:',send_len)
-                print('当前下载流量为:',recv_len,'\n')
+                print('\n当前上传流量为:',send_len,'Byte')
+                print('当前下载流量为:',recv_len,'Byte\n')
                 self.printMenu()
                 self.selectFunc()
             elif option == 0:
@@ -442,6 +442,9 @@ class Menu():
                     self.printMenu()
                     self.selectFunc()
 
+def restart_program():
+  python = sys.executable
+  os.execl(python, python, * sys.argv)
 if __name__ == '__main__':
     global flag
     flag = False
@@ -449,6 +452,7 @@ if __name__ == '__main__':
     cp.sections()
     cp.read('server.conf',encoding='utf-8')
     #listenAddr = socket.gethostname()
+
     listenAddr = '127.0.0.1'
     listenPort = int(cp['basic']['listenport'])
     global listenSock
